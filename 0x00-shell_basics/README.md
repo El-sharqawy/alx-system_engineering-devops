@@ -6,3 +6,11 @@ Description : Display the contents list of your current directory.
 
 File : 2-bring_me_home
 Description : changes the working directory to the user’s home directory.
+
+File : 3-listfiles
+Description : Display current directory contents in a long format.
+
+File : 4-listmorefiles
+Description : Display current directory contents, including hidden files (starting with .). Use the long format.
+
+
