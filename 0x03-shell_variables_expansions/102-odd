@@ -1,2 +1,2 @@
 #!/bin/bash
-grep "$m" | sort -u
+grep -E [13579] | sort -u
