@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# a Bash script that installs nginx and configure it
+# a Bash script that installs nginx
 
 apt-get -y update
 apt-get -y install nginx
