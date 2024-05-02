@@ -1,4 +1,4 @@
-#!/usr/bin/bash env
+#!/usr/bin/env bash
 # a Configuration for Domain Zone
 
 print_subdomain() {
