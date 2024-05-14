@@ -10,5 +10,8 @@ sed -i "s/80/8080/g" /etc/nginx/sites-available/defualt
 # Give read & write permissions
 chmod 644 /etc/nginx/nginx.conf
 
+# kill apache
+pkill apache2
+
 # restart nginx with new user "nginx"
 sudo -u nginx service nginx restart
