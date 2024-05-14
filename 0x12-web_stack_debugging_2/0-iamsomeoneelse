@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# a Bash script that run whoami on specific user
+sudo -u "$1" whoami
