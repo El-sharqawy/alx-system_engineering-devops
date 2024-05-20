@@ -15,7 +15,7 @@ def FetchData(employeeID):
     todoList = requests.get(f"{url}users/{employeeID}/todos")
     name = requests.get(f"{url}users/{employeeID}")
 
-    jsonName = name.json()["name"]
+    jsonName = name.json()["username"]
     todoJson = todoList.json()
 
     tasksDone = 0
