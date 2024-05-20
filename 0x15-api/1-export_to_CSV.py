@@ -30,7 +30,8 @@ def FetchData(employeeID):
 
         for task in todoJson:
             fileWrite.writerow([id, jsonName,
-                                  task.get('completed'), task.get('title')])
+                                task.get('completed'), task.get('title')])
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
