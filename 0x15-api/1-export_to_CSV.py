@@ -22,8 +22,9 @@ def FetchData(employeeID):
     with open(filePath, "w") as file:
         for task in todoJson:
             file.write(
-                f"\"{employeeID}\",\"{jsonName}\",\"{task['completed']}\",\"{task['title']}\""
-                + "\n"
+                '"{}","{}","{}","{}"\n'.format(
+                    employeeID, jsonName, task["completed"], task["title"]
+                )
             )
 
 
