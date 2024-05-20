@@ -23,8 +23,8 @@ def FetchData(employeeID):
     with open(filePath, "w", newline="") as file:
         fileWrite = csv.writer(file, delimiter=",", quoting=csv.QUOTE_ALL)
         for task in todoJson:
-            fileWrite.writerow(
-                [employeeID, jsonName, task.get("completed"), task.get("title")]
+            fileWrite.writerow([employeeID, jsonName,
+                                task.get("completed"), task.get("title")]
             )
 
 
