@@ -3,9 +3,9 @@
 a Python script to gather data from an API
 """
 
+import csv
 import requests
 import sys
-import csv
 
 
 def FetchData(employeeID):
@@ -18,14 +18,19 @@ def FetchData(employeeID):
     jsonName = name.json()["name"]
     todoJson = todoList.json()
 
+    tasksDone = 0
+
+    for task in todoJson:
+        if task["completed"]:
+            tasksDone += 1
+
     filePath = f"{employeeID}.csv"
+    with open(filePath, 'w', newline='') as file:
+        fileWrite = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
 
-    with open(filePath, "w", newline="") as file:
-        fileWrite = csv.writer(file, delimiter=",", quoting=csv.QUOTE_ALL)
         for task in todoJson:
-            fileWrite.writerow([employeeID, jsonName,
-                                task.get("completed"), task.get("title")])
-
+            fileWrite.writerow([id, jsonName,
+                                  task.get('completed'), task.get('title')])
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
