@@ -5,6 +5,7 @@ a Python script to gather data from an API
 
 import requests
 import sys
+import csv
 
 
 def FetchData(employeeID):
@@ -19,12 +20,11 @@ def FetchData(employeeID):
 
     filePath = f"{employeeID}.csv"
 
-    with open(filePath, "w") as file:
+    with open(filePath, "w", newline="") as file:
+        fileWrite = csv.writer(file, delimiter=",", quoting=csv.QUOTE_ALL)
         for task in todoJson:
-            file.write(
-                '"{}","{}","{}","{}"\n'.format(
-                    employeeID, jsonName, task["completed"], task["title"]
-                )
+            fileWrite.writerow(
+                [employeeID, jsonName, task.get("completed"), task.get("title")]
             )
 
 
